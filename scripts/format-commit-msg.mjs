@@ -5,7 +5,7 @@ const commitMsgFile = process.argv[2];
 
 const branchName = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
 
-const ticketPrefixMatch = branchName.match(/(LPC-\d+)/);
+const ticketPrefixMatch = branchName.match(/^[^/]+\/([A-Z]+-\d+)/);
 
 if (ticketPrefixMatch) {
   const ticketPrefix = `[${ticketPrefixMatch[1]}] `;
