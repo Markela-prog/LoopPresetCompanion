@@ -2,3 +2,4 @@
 echo "Husky pre-commit hook triggered"
 npx lint-staged
 ng lint
+npm run test-headless
