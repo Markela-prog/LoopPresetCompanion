@@ -1,18 +1,18 @@
 // @ts-check
 const eslint = require('@eslint/js');
-const tseslint = require('typescript-eslint');
+const tsEslint = require('typescript-eslint');
 const angular = require('angular-eslint');
 const prettier = require('eslint-config-prettier');
 const pluginPrettier = require('eslint-plugin-prettier');
 
-module.exports = tseslint.config(
+module.exports = tsEslint.config(
   {
     files: ['**/*.ts'],
     extends: [
       eslint.configs.recommended,
-      ...tseslint.configs.recommended,
-      ...tseslint.configs.stylistic,
-      ...angular.configs.tsRecommended,
+      ...tsEslint.configs.recommended,
+      ...tsEslint.configs.stylistic,
+      ...angular.configs.tsRecommended, 
     ],
     plugins: {
       prettier: pluginPrettier,
@@ -41,7 +41,12 @@ module.exports = tseslint.config(
   {
     files: ['**/*.html'],
     extends: [...angular.configs.templateRecommended, ...angular.configs.templateAccessibility],
-    rules: {},
+    plugins: {
+      prettier: pluginPrettier,
+    },
+    rules: {
+      'prettier/prettier': ['error', {parser: 'angular'}],
+    },
   },
   prettier,
 );
