@@ -1,6 +1,6 @@
 <main>
-  @if (items.length > 0) {
-    <h2>Item List</h2>
+  @if (items.length !== 0) {
+    <h2 id="1" id="2">Item List</h2>
     <ul>
       @for (item of items; track item) {
         <li>{{ item }}</li>

@@ -12,7 +12,7 @@ module.exports = tsEslint.config(
       eslint.configs.recommended,
       ...tsEslint.configs.recommended,
       ...tsEslint.configs.stylistic,
-      ...angular.configs.tsRecommended, 
+      ...angular.configs.tsRecommended,
     ],
     plugins: {
       prettier: pluginPrettier,
@@ -45,7 +45,8 @@ module.exports = tsEslint.config(
       prettier: pluginPrettier,
     },
     rules: {
-      'prettier/prettier': ['error', {parser: 'angular'}],
+      '@angular-eslint/template/eqeqeq': ['error'],
+      'prettier/prettier': ['error', { parser: 'angular' }],
     },
   },
   prettier,
