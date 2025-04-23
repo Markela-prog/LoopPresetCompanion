@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "lint-staged": {
     "*.{ts,html,scss}": [
-      "eslint --fix",
-      "prettier --write"
+      "npm run lint"
     ]
   },
   "scripts": {
