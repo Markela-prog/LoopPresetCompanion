@@ -1,0 +1,29 @@
+name: Lint and Test
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-and-test:
+    name: Run Angular Linter and Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Run Linter
+        run: npm run lint
+
+      - name: Run Tests
+        run: npm run test-headless
