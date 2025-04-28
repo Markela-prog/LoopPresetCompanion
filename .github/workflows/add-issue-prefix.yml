@@ -1,7 +1,6 @@
 name: Add Auto-Incrementing LPC Prefix
 
 on:
-  workflow_dispatch:
   issues:
     types: [opened]
 
@@ -30,7 +29,7 @@ jobs:
           fi
 
           # Form the new title with the incremented number
-          NEW_TITLE="${PREFIX}${NEW_NUMBER} ${{ github.event.issue.title }}"
+          NEW_TITLE="[${PREFIX}${NEW_NUMBER}] ${{ github.event.issue.title }}"
 
           # Update the issue title
           curl -X PATCH -H "Authorization: token $GITHUB_TOKEN" \
