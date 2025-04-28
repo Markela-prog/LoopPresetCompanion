@@ -1,0 +1,39 @@
+name: Add Auto-Incrementing LPC Prefix
+
+on:
+  workflow_dispatch:
+  issues:
+    types: [opened]
+
+jobs:
+  add-prefix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up environment variables
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PREFIX="LPC-"
+          
+          # Get all issues and sort them by number
+          ISSUES=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/${{ github.repository }}/issues?state=all")
+
+          # Extract the highest number from existing issues with the LPC prefix
+          LATEST_NUMBER=$(echo "$ISSUES" | jq -r '.[].title' | grep -o "$PREFIX[0-9]*" | grep -o "[0-9]*" | sort -n | tail -1)
+          
+          # If no issues with LPC prefix exist, start at 1
+          if [ -z "$LATEST_NUMBER" ]; then
+            NEW_NUMBER=1
+          else
+            NEW_NUMBER=$((LATEST_NUMBER + 1))
+          fi
+
+          # Form the new title with the incremented number
+          NEW_TITLE="${PREFIX}${NEW_NUMBER} ${{ github.event.issue.title }}"
+
+          # Update the issue title
+          curl -X PATCH -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{\"title\": \"$NEW_TITLE\"}" \
+            "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}"
