@@ -1,6 +1,7 @@
 name: Add Auto-Incrementing LPC Prefix
 
 on:
+  workflow_dispatch:
   issues:
     types: [opened]
 
