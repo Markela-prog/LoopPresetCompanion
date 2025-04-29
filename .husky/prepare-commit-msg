@@ -1,3 +1,3 @@
 #!/bin/sh
-echo "Commit-msg hook is running..."
+echo "Prepare-commit-msg hook is running..."
 node scripts/format-commit-msg.mjs "$1"
