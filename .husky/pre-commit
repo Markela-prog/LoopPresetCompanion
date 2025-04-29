@@ -1,4 +1,0 @@
-#!/bin/sh
-echo "Husky pre-commit hook triggered"
-npm run lint-staged
-npm run test-headless

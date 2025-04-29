@@ -14,8 +14,7 @@
     "test": "ng test",
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
-    "lint-staged": "lint-staged",
-    "prepare": "husky"
+    "lint-staged": "lint-staged"
   },
   "private": true,
   "dependencies": {
@@ -40,7 +39,6 @@
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
-    "husky": "^9.1.7",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
