@@ -1,13 +1,21 @@
 {
   "name": "loop-preset-companion",
   "version": "0.0.0",
+  "lint-staged": {
+    "*.{ts,html,scss}": [
+      "eslint"
+    ]
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "lint": "ng lint",
+    "lint-staged": "lint-staged",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -32,12 +40,14 @@
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
+    "husky": "^9.1.7",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "lint-staged": "^15.5.1",
     "prettier": "^3.5.3",
     "typescript": "~5.4.2",
     "typescript-eslint": "8.27.0"
