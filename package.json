@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "lint-staged": {
     "*.{ts,html,scss}": [
-      "npm run lint"
+      "eslint"
     ]
   },
   "scripts": {
