@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/fonts/Roboto-Regular.woff2') format('woff2'),
+         url('/assets/fonts/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    src: url('/assets/material-icons/MaterialIcons-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+    font-size: 24px;
+    display: inline-block;
+    text-transform: none;
+    font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
