@@ -16,10 +16,8 @@
     "lint": "ng lint",
     "lint-staged": "lint-staged",
     "prepare": "husky",
-    "check:outdated": "npm outdated || exit 0",
-    "check:updates": "npx npm-check",
-    "check:unused": "npx depcheck",
-    "check:all": "npm-run-all --continue-on-error check:outdated check:updates check:unused"
+    "check:libs": "npx npm-check",
+    "check:libs-interactive": "npx npm-check -u"
   },
   "private": true,
   "dependencies": {
