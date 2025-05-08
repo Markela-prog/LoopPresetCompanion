@@ -1,0 +1,50 @@
+version: 2  # Specifies the version of the Dependabot configuration file.
+
+updates:
+  - package-ecosystem: "npm"  # Defines the package manager (Options: npm, yarn, pip, maven, etc.).
+    directory: "/"  # Location of package.json (e.g., "/", "/backend", "/src").
+
+    schedule:
+      interval: "weekly"  # How often to check for updates (Options: daily, weekly, monthly).
+      day: "monday"  # The day updates should run (Options: monday, tuesday, ..., sunday).
+      time: "06:00"  # The time updates should run (Format: HH:MM in 24-hour format).
+      timezone: "UTC"  # Timezone for scheduling (Options: UTC, Europe/Vilnius, America/New_York, etc.).
+
+    open-pull-requests-limit: 5  # Maximum number of open PRs at a time to prevent spam.
+
+    commit-message:
+      prefix: "chore"  # Prefix for commit messages (Options: update, fix, deps, build, etc.).
+      include: "scope"  # Adds more details about the dependency scope in commits.
+
+    groups:  # Group dependencies together to reduce the number of PRs.
+      angular:
+        patterns:
+          - "@angular*"  # Matches all Angular packages.
+        update-types:
+          - "minor"  # Only update minor versions.
+          - "patch"  # Only update patch versions.
+
+      typescript:
+        patterns:
+          - "typescript"  # Matches the TypeScript package.
+        update-types:
+          - "minor"
+          - "patch"
+
+      eslint:
+        patterns:
+          - "@typescript-eslint*"  # Matches TypeScript ESLint packages.
+          - "eslint*"  # Matches ESLint packages.
+        update-types:
+          - "minor"
+          - "patch"
+
+      testing:
+        patterns:
+          - "karma*"  # Matches Karma testing framework.
+          - "jasmine*"  # Matches Jasmine test framework.
+          - "jest*"  # Matches Jest test framework.
+          - "cypress*"  # Matches Cypress testing framework.
+        update-types:
+          - "minor"
+          - "patch"
