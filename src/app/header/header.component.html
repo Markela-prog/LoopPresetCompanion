@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="home-button">
+      <a routerLink="/" class="brand">LOOP PRESET COMPANION</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-links">
+        <ul>
+          <li><a routerLink="/explore">EXPLORE</a></li>
+          <li><a routerLink="/my-presets">MY PRESETS</a></li>
+        </ul>
+      </div>
+      <div class="nav-actions">
+        <button class="login-logout" (click)="onToggleAuth()">
+          {{ isAuthenticated ? 'Logout' : 'Login' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
