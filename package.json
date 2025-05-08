@@ -15,7 +15,9 @@
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "lint-staged": "lint-staged",
-    "prepare": "husky"
+    "prepare": "husky",
+    "check:libs": "npx npm-check",
+    "check:libs-interactive": "npx npm-check -u"
   },
   "private": true,
   "dependencies": {
@@ -51,7 +53,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "lint-staged": "^15.5.1",
     "prettier": "^3.5.3",
-    "typescript": "~5.4.2",
+    "typescript": "^5.4.5",
     "typescript-eslint": "8.27.0"
   }
 }

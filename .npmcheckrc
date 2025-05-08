@@ -1,0 +1,10 @@
+{
+  "depcheck": {
+    "ignoreMatches": [
+      "@angular/compiler",
+      "@angular/forms",
+      "@angular/platform-browser-dynamic",
+      "tslib"
+    ]
+  }
+}
