@@ -1,16 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuthGoogleService } from '../auth/google-auth.service';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [MatButtonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  isAuthenticated = false;
+  private authService = inject(AuthGoogleService);
+  profile = this.authService.profile;
 
   onToggleAuth() {
-    this.isAuthenticated = !this.isAuthenticated;
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    this.authService.isAuthenticated() ? this.authService.logout() : this.authService.login();
+    // if (this.authService.isAuthenticated()) {
+    //   this.authService.logout();
+    // } else {
+    //   this.authService.login();
+    // }
   }
 }

@@ -12,8 +12,14 @@
         </ul>
       </div>
       <div class="nav-actions">
-        <button class="login-logout" (click)="onToggleAuth()">
-          {{ isAuthenticated ? 'Logout' : 'Login' }}
+        @if (profile()) {
+          <div class="user-info">
+            <img [src]="profile()?.picture" alt="User Avatar" class="user-avatar" />
+            <span class="user-name">{{ profile()?.name }}</span>
+          </div>
+        }
+        <button mat-raised-button color="primary" (click)="onToggleAuth()">
+          {{ profile() ? 'Logout' : 'Login' }}
         </button>
       </div>
     </div>

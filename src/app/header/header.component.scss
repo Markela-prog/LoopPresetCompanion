@@ -1,51 +1,75 @@
 .navbar {
-    background-color: #2D2D2D;
-    padding: 15px;
+  background-color: #2d2d2d;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .container {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+  }
 
-    .container {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  .home-button .brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #13e100;
+    text-decoration: none;
+  }
+
+  .nav-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+
+    li a {
+      color: #61b0ff;
+      text-decoration: none;
+      font-size: 12px;
     }
+  }
 
-    .home-button .brand {
-        font-size: 24px;
-        font-weight: bold;
-        color: #13E100;
-        text-decoration: none;
-    }
-
-    .nav-group {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .nav-links ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 15px;
-
-        li a {
-            color: #61B0FF;
-            text-decoration: none;
-            font-size: 12px;
-        }
-    }
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
     .login-logout {
-        background-color: #61B0FF;
-        color: #fff;
-        padding: 8px 15px;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-        border-radius: 5px;
+      background-color: #13e100;
+      color: #fff;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
     }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    .user-name {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
 }
