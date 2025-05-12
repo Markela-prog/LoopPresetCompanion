@@ -13,7 +13,7 @@ updates:
     open-pull-requests-limit: 5  # Maximum number of open PRs at a time to prevent spam.
 
     commit-message:
-      prefix: "chore"  # Prefix for commit messages (Options: update, fix, deps, build, etc.).
+      prefix: "dependabot"  # Prefix for commit messages (Options: update, fix, deps, build, etc.).
       include: "scope"  # Adds more details about the dependency scope in commits.
 
     groups:  # Group dependencies together to reduce the number of PRs.
