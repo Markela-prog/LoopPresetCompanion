@@ -8,10 +8,8 @@ export const routes: Routes = [
   },
   {
     path: 'my-presets',
-    component: AppComponent,
   },
   {
     path: 'explore',
-    component: AppComponent,
   },
 ];

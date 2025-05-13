@@ -1,11 +1,12 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { authConfig } from './auth-config';
+import { Profile } from '../models/profile';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGoogleService {
   private oAuthService = inject(OAuthService);
-  profile = signal<{ name: string; email: string; picture: string } | null>(null);
+  profile = signal<Profile | null>(null);
 
   constructor() {
     this.initConfiguration();
@@ -31,6 +32,7 @@ export class AuthGoogleService {
   }
 
   logout() {
+    this.oAuthService.revokeTokenAndLogout();
     this.oAuthService.logOut();
     this.profile.set(null);
   }
