@@ -8,7 +8,9 @@
       <div class="nav-links">
         <ul>
           <li><a routerLink="/explore">EXPLORE</a></li>
-          <li><a routerLink="/my-presets">MY PRESETS</a></li>
+          @if (profile()) {
+            <li><a routerLink="/my-presets">MY PRESETS</a></li>
+          }
         </ul>
       </div>
       <div class="nav-actions">

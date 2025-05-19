@@ -18,11 +18,13 @@ export class AuthGoogleService {
       if (this.oAuthService.hasValidIdToken()) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const claims = this.oAuthService.getIdentityClaims() as any;
-        this.profile.set({
-          name: claims.name,
-          email: claims.email,
-          picture: claims.picture,
-        });
+        if (claims) {
+          this.profile.set({
+            name: claims.name,
+            email: claims.email,
+            picture: claims.picture,
+          });
+        }
       }
     });
   }
