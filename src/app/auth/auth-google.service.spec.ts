@@ -16,6 +16,7 @@ describe('AuthGoogleService', () => {
             loadDiscoveryDocumentAndTryLogin: () => Promise.resolve(),
             hasValidIdToken: () => true,
             getIdentityClaims: () => ({}),
+            setStorage: () => {},
           },
         },
       ],
