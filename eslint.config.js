@@ -49,5 +49,11 @@ module.exports = tsEslint.config(
       'prettier/prettier': ['error', { parser: 'angular' }],
     },
   },
+  {
+    files: ['**/*.spec.ts', '*.mock.ts'],
+    rules: {
+      '@typescript-eslint/no-empty-function': 'off',
+    },
+  },
   prettier,
 );
