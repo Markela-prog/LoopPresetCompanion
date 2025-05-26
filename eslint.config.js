@@ -46,6 +46,7 @@ module.exports = tsEslint.config(
     },
     rules: {
       '@angular-eslint/template/eqeqeq': ['error'],
+      '@angular-eslint/template/no-duplicate-attributes': 'error',
       'prettier/prettier': ['error', { parser: 'angular' }],
     },
   },
