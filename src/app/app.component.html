@@ -1,7 +1,7 @@
 <button mat-raised-button color="primary">Click me</button>
 <main>
   @if (items.length !== 0) {
-    <h2 id="1" id="2">Item List</h2>
+    <h2 id="1">Item List</h2>
     <ul>
       @for (item of items; track item) {
         <li>{{ item }}</li>
@@ -10,4 +10,5 @@
   } @else {
     <p>No items available.</p>
   }
+  <i class="material-icons" aria-hidden="true">face</i>
 </main>
