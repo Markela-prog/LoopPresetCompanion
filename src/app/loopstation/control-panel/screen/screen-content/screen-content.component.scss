@@ -1,0 +1,14 @@
+.effect-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.effect-item {
+  padding: 1rem 1.5rem;
+  border: 1px solid #6fffe9;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: white;
+}

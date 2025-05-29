@@ -1,0 +1,27 @@
+<div class="control-panel">
+  <div class="side">
+    <div class="panel-title-wrapper">
+      <div class="panel-title">INPUT FX</div>
+      <hr />
+    </div>
+    <div class="toggle-label">Bank</div>
+    <app-bank-selector [type]="'input'"></app-bank-selector>
+    <div class="toggle-label">Slot</div>
+    <app-slot-selector [type]="'input'"></app-slot-selector>
+  </div>
+
+  <div class="screen-container">
+    <app-screen></app-screen>
+  </div>
+
+  <div class="side">
+    <div class="panel-title-wrapper">
+      <div class="panel-title">TRACK FX</div>
+      <hr />
+    </div>
+    <div class="toggle-label">Bank</div>
+    <app-bank-selector [type]="'track'"></app-bank-selector>
+    <div class="toggle-label">Slot</div>
+    <app-slot-selector [type]="'track'"></app-slot-selector>
+  </div>
+</div>
