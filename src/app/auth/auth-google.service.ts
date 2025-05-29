@@ -5,12 +5,26 @@ import { Profile } from '../models/profile';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGoogleService {
-  private oAuthService = inject(OAuthService);
   profile = signal<Profile | null>(null);
+  private oAuthService = inject(OAuthService);
 
   constructor() {
     this.initConfiguration();
     this.listenToStorageChanges();
+  }
+
+  login() {
+    this.oAuthService.initImplicitFlow();
+  }
+
+  logout() {
+    this.oAuthService.revokeTokenAndLogout();
+    this.oAuthService.logOut();
+    this.profile.set(null);
+  }
+
+  isAuthenticated() {
+    return this.oAuthService.hasValidIdToken();
   }
 
   private listenToStorageChanges() {
@@ -49,19 +63,5 @@ export class AuthGoogleService {
     } else {
       this.profile.set(null);
     }
-  }
-
-  login() {
-    this.oAuthService.initImplicitFlow();
-  }
-
-  logout() {
-    this.oAuthService.revokeTokenAndLogout();
-    this.oAuthService.logOut();
-    this.profile.set(null);
-  }
-
-  isAuthenticated() {
-    return this.oAuthService.hasValidIdToken();
   }
 }
