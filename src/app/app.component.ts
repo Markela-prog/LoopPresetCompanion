@@ -7,7 +7,4 @@ import { LoopstationComponent } from './loopstation/loopstation.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'LoopPresetCompanion';
-  items = ['Item 1', 'Item 2', 'Item s3'];
-}
+export class AppComponent {}
