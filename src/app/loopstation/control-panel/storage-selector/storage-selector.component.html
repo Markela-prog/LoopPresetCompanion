@@ -1,0 +1,25 @@
+<div class="toggle-label">Bank</div>
+<mat-button-toggle-group
+  [value]="isActiveSide() ? activeBank() : null"
+  (change)="onBankChange($event.value)"
+  [ngClass]="{ inactive: !isActiveSide() }"
+  appearance="legacy"
+  exclusive
+>
+  @for (bank of banks; track bank) {
+    <mat-button-toggle [value]="bank">{{ bank }}</mat-button-toggle>
+  }
+</mat-button-toggle-group>
+
+<div class="toggle-label">Slot</div>
+<mat-button-toggle-group
+  [value]="isActiveSide() ? activeSlot() : null"
+  (change)="onSlotChange($event.value)"
+  [ngClass]="{ inactive: !isActiveSide() }"
+  appearance="legacy"
+  exclusive
+>
+  @for (slot of slots; track slot) {
+    <mat-button-toggle [value]="slot">{{ slot }}</mat-button-toggle>
+  }
+</mat-button-toggle-group>

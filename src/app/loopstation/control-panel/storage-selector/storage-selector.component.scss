@@ -1,7 +1,8 @@
 :host {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
 
   ::ng-deep .mat-button-toggle-group {
     background-color: black;
@@ -27,8 +28,8 @@
     background-color: black !important;
     font-weight: bold;
   }
-}
 
-mat-button-toggle-group.inactive {
-  opacity: 0.5;
+  .inactive {
+    opacity: 0.5;
+  }
 }

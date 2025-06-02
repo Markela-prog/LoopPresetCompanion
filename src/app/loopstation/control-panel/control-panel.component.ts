@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { BankSelectorComponent } from './bank-selector/bank-selector.component';
-import { SlotSelectorComponent } from './slot-selector/slot-selector.component';
+
 import { ScreenComponent } from './screen/screen.component';
+import { StorageSelectorComponent } from './storage-selector/storage-selector.component';
 
 @Component({
   selector: 'app-control-panel',
-  imports: [CommonModule, BankSelectorComponent, SlotSelectorComponent, ScreenComponent],
+  imports: [CommonModule, ScreenComponent, StorageSelectorComponent],
   templateUrl: './control-panel.component.html',
   styleUrl: './control-panel.component.scss',
 })
