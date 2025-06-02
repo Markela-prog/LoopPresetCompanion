@@ -2,11 +2,13 @@ import { Injectable, inject, signal } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { authConfig } from './auth-config';
 import { Profile } from '../models/profile';
+import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGoogleService {
   profile = signal<Profile | null>(null);
   private oAuthService = inject(OAuthService);
+  private router = inject(Router);
 
   constructor() {
     this.initConfiguration();
@@ -21,6 +23,7 @@ export class AuthGoogleService {
     this.oAuthService.revokeTokenAndLogout();
     this.oAuthService.logOut();
     this.profile.set(null);
+    this.router.navigate(['/']);
   }
 
   isAuthenticated() {
