@@ -36,6 +36,10 @@ module.exports = tsEslint.config(
         },
       ],
       'prettier/prettier': ['error'],
+      'padding-line-between-statements': [
+        'error',
+        { blankLine: 'always', prev: '*', next: 'return' },
+      ],
     },
   },
   {
