@@ -4,7 +4,6 @@ import { HeaderComponent } from './header.component';
 import { AuthGoogleServiceMock } from '../mocks/auth-google-service.mock';
 import { AuthGoogleService } from '../auth/auth-google.service';
 import { ActivatedRoute } from '@angular/router';
-import { of } from 'rxjs';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -20,11 +19,7 @@ describe('HeaderComponent', () => {
         },
         {
           provide: ActivatedRoute,
-          useValue: {
-            params: of({}),
-            queryParams: of({}),
-            snapshot: {},
-          },
+          useValue: {},
         },
       ],
     }).compileComponents();
