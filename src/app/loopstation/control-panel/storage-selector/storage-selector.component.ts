@@ -13,7 +13,6 @@ import {
 
 @Component({
   selector: 'app-storage-selector',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './storage-selector.component.html',
   styleUrl: './storage-selector.component.scss',
