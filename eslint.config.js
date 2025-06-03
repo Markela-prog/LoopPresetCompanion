@@ -55,7 +55,7 @@ module.exports = tsEslint.config(
     },
   },
   {
-    files: ['**/*.spec.ts', '*.mock.ts'],
+    files: ['**/*.spec.ts', '**/*.mock.ts'],
     rules: {
       '@typescript-eslint/no-empty-function': 'off',
     },

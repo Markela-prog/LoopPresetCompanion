@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { AuthGoogleService } from './auth-google.service';
 import { OAuthService } from 'angular-oauth2-oidc';
+import { OAuthServiceMock } from '../mocks/oauth-service.mock';
 
 describe('AuthGoogleService', () => {
   let service: AuthGoogleService;
@@ -11,13 +12,7 @@ describe('AuthGoogleService', () => {
       providers: [
         {
           provide: OAuthService,
-          useValue: {
-            configure: () => {},
-            loadDiscoveryDocumentAndTryLogin: () => Promise.resolve(),
-            hasValidIdToken: () => true,
-            getIdentityClaims: () => ({}),
-            setStorage: () => {},
-          },
+          useValue: OAuthServiceMock,
         },
       ],
     });
