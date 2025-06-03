@@ -11,6 +11,7 @@ import { RouterLink } from '@angular/router';
 })
 export class HeaderComponent {
   private authService = inject(AuthGoogleService);
+
   profile = this.authService.profile;
 
   onToggleAuth() {

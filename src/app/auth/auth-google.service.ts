@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 @Injectable({ providedIn: 'root' })
 export class AuthGoogleService {
   profile = signal<Profile | null>(null);
+
   private oAuthService = inject(OAuthService);
   private router = inject(Router);
 
