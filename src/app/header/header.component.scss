@@ -1,0 +1,58 @@
+.navbar {
+  background-color: #2d2d2d;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .home-button .brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #13e100;
+    text-decoration: none;
+  }
+
+  .nav-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+
+    li a {
+      color: #61b0ff;
+      text-decoration: none;
+      font-size: 12px;
+    }
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    .user-name {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}

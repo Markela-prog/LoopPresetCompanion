@@ -36,6 +36,10 @@ module.exports = tsEslint.config(
         },
       ],
       'prettier/prettier': ['error'],
+      'padding-line-between-statements': [
+        'error',
+        { blankLine: 'always', prev: '*', next: 'return' },
+      ],
     },
   },
   {
@@ -48,6 +52,12 @@ module.exports = tsEslint.config(
       '@angular-eslint/template/eqeqeq': ['error'],
       '@angular-eslint/template/no-duplicate-attributes': 'error',
       'prettier/prettier': ['error', { parser: 'angular' }],
+    },
+  },
+  {
+    files: ['**/*.spec.ts', '**/*.mock.ts'],
+    rules: {
+      '@typescript-eslint/no-empty-function': 'off',
     },
   },
   prettier,

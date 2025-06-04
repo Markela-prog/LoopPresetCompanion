@@ -1,0 +1,27 @@
+<nav class="navbar">
+  <div class="home-button">
+    <a routerLink="/" class="brand">LOOP PRESET COMPANION</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-links">
+      <ul>
+        <li><a routerLink="/explore">EXPLORE</a></li>
+        @if (profile()) {
+          <li><a routerLink="/my-presets">MY PRESETS</a></li>
+        }
+      </ul>
+    </div>
+    <div class="nav-actions">
+      @if (profile()) {
+        <div class="user-info">
+          <img [src]="profile()?.picture" alt="User Avatar" class="user-avatar" />
+          <span class="user-name">{{ profile()?.name }}</span>
+        </div>
+      }
+      <button mat-raised-button color="primary" (click)="onToggleAuth()">
+        {{ profile() ? 'Logout' : 'Login' }}
+      </button>
+    </div>
+  </div>
+</nav>
