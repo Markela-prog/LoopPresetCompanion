@@ -1,18 +1,19 @@
 import { Component, computed } from '@angular/core';
-import { currentState } from '../../../loopstation.state';
+import { LoopstationService } from '../../../loopstation.service';
 
 @Component({
   selector: 'app-screen-content',
-  imports: [],
+  standalone: true,
   templateUrl: './screen-content.component.html',
   styleUrl: './screen-content.component.scss',
 })
 export class ScreenContentComponent {
-  readonly state = computed(() => currentState());
+  constructor(private readonly ls: LoopstationService) {}
 
-  get effects() {
-    const type = this.state().type;
-    const value = this.state().value;
+  readonly state = computed(() => this.ls.currentState());
+
+  get effects(): string[] {
+    const { type, value } = this.state();
     return [
       `Effect One for ${type.toUpperCase()} ${value}`,
       `Effect Two for ${type.toUpperCase()} ${value}`,

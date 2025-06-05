@@ -1,18 +1,11 @@
-import { Component, computed, Input } from '@angular/core';
+import { Component, Input, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Bank, Slot, StateType } from '../../loopsation.types';
-import {
-  inputBank,
-  trackBank,
-  inputSlot,
-  trackSlot,
-  isInputActive,
-  setBank,
-  setSlot,
-} from '../../loopstation.state';
+import { Bank, Slot, StateType } from '../../loopstation.model';
+import { LoopstationService } from '../../loopstation.service';
 
 @Component({
   selector: 'app-storage-selector',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './storage-selector.component.html',
   styleUrl: './storage-selector.component.scss',
@@ -23,20 +16,20 @@ export class StorageSelectorComponent {
   readonly banks: Bank[] = ['A', 'B', 'C', 'D'];
   readonly slots: Slot[] = ['A', 'B', 'C', 'D'];
 
-  readonly isActiveSide = computed(() =>
-    this.type === 'input' ? isInputActive() : !isInputActive(),
-  );
-  readonly activeBank = computed(() => (this.type === 'input' ? inputBank() : trackBank()));
+  constructor(public ls: LoopstationService) {}
 
-  readonly activeSlot = computed(() => (this.type === 'input' ? inputSlot() : trackSlot()));
+  readonly isActiveSide = computed(() =>
+    this.type === 'input' ? this.ls.isActiveSide : !this.ls.isActiveSide,
+  );
+
+  readonly activeBank = computed(() => this.ls.getBank(this.type));
+  readonly activeSlot = computed(() => this.ls.getSlot(this.type));
 
   onBankChange(bank: Bank): void {
-    if (!this.banks.includes(bank)) return;
-    setBank(this.type, bank);
+    this.ls.setBank(this.type, bank);
   }
 
   onSlotChange(slot: Slot): void {
-    if (!this.slots.includes(slot)) return;
-    setSlot(this.type, slot);
+    this.ls.setSlot(this.type, slot);
   }
 }

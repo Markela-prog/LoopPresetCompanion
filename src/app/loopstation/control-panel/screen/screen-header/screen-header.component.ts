@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { currentState } from '../../../loopstation.state';
+import { LoopstationService } from '../../../loopstation.service';
 
 @Component({
   selector: 'app-screen-header',
-  imports: [],
   templateUrl: './screen-header.component.html',
   styleUrl: './screen-header.component.scss',
+  standalone: true,
 })
 export class ScreenHeaderComponent {
-  readonly state = currentState;
+  constructor(public ls: LoopstationService) {}
 }
