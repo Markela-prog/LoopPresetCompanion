@@ -5,7 +5,6 @@ import { LoopstationService } from '../../../loopstation.service';
   selector: 'app-screen-header',
   templateUrl: './screen-header.component.html',
   styleUrl: './screen-header.component.scss',
-  standalone: true,
 })
 export class ScreenHeaderComponent {
   constructor(public ls: LoopstationService) {}

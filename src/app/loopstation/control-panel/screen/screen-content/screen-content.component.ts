@@ -3,7 +3,6 @@ import { LoopstationService } from '../../../loopstation.service';
 
 @Component({
   selector: 'app-screen-content',
-  standalone: true,
   templateUrl: './screen-content.component.html',
   styleUrl: './screen-content.component.scss',
 })
