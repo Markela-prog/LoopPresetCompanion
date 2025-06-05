@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
+import { LoopstationComponent } from './loopstation/loopstation.component';
 
 @Component({
   selector: 'app-root',
-  imports: [MatButtonModule],
+  imports: [LoopstationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'LoopPresetCompanion';
-  items = ['Item 1', 'Item 2', 'Item s3'];
-}
+export class AppComponent {}

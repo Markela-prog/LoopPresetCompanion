@@ -1,0 +1,27 @@
+<div class="toggle-label">Bank</div>
+<div class="toggle-group bank-group" [class.inactive]="!isActiveSide()">
+  @for (bank of banks; track bank) {
+    <button
+      type="button"
+      class="toggle-button"
+      [class.active-bank]="activeBank() === bank && isActiveSide()"
+      (click)="onBankChange(bank)"
+    >
+      {{ bank }}
+    </button>
+  }
+</div>
+
+<div class="toggle-label">Slot</div>
+<div class="toggle-group slot-group" [class.inactive]="!isActiveSide()">
+  @for (slot of slots; track slot) {
+    <button
+      type="button"
+      class="toggle-button"
+      [class.active-slot]="activeSlot() === slot && isActiveSide()"
+      (click)="onSlotChange(slot)"
+    >
+      {{ slot }}
+    </button>
+  }
+</div>

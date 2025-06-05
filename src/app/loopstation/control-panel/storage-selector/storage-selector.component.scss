@@ -1,0 +1,50 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  .toggle-group {
+    display: flex;
+    gap: 6px;
+    padding: 4px;
+    transition: opacity 0.3s;
+
+    &.inactive {
+      opacity: 0.5;
+    }
+  }
+
+  .toggle-button {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: black;
+    color: gray;
+    border: 2px solid gray;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: #111;
+    }
+  }
+
+  .active-bank {
+    color: #4dc3ff;
+    border-color: #4dc3ff;
+    font-weight: 700;
+  }
+
+  .active-slot {
+    color: #ff69b4;
+    border-color: #ff69b4;
+    font-weight: 700;
+  }
+}

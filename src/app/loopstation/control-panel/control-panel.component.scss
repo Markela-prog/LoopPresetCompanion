@@ -1,0 +1,96 @@
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  background-color: #111;
+  padding: 1rem;
+  border-radius: 8px;
+  gap: 1rem;
+
+  .screen-wrapper,
+  .input-side,
+  .track-side {
+    width: 100%;
+  }
+
+  .screen-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #111;
+    padding-bottom: 1rem;
+
+    .screen-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .screen {
+        min-width: 320px;
+        width: 100%;
+        max-width: 600px;
+      }
+    }
+  }
+
+  .side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 240px;
+  }
+
+  .panel-title-wrapper {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-bottom: 0.5rem;
+
+    .panel-title {
+      color: #ff4c4c;
+      font-weight: bold;
+      font-size: 1.2rem;
+      background-color: #111;
+      display: inline-block;
+      padding: 0 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid #ff4c4c;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      z-index: 0;
+    }
+  }
+
+  .toggle-label {
+    font-weight: 500;
+    color: #ff4c4c;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 1025px) {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: 'input screen track';
+
+    .input-side {
+      grid-area: input;
+    }
+
+    .screen-wrapper {
+      grid-area: screen;
+    }
+
+    .track-side {
+      grid-area: track;
+    }
+  }
+}
